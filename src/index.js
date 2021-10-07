@@ -1,19 +1,3 @@
-Skip to content
-panilo
-/
-new_react_tiptaptoe
-Public
-Code
-Issues
-Pull requests
-Actions
-More
-new_react_tiptaptoe/src/index.js /
-@panilo
-panilo Init
- History
- 1 contributor
-95 lines (82 sloc)  2.02 KB
 import React from "react";
 import ReactDOM from "react-dom";
 
