@@ -9,9 +9,9 @@ class Square extends React.Component{
     render(){
         return(
           <>
-            <button onClick={() => {this.props.onClick();
+            <button className="grit-item" onClick={() => {this.props.onClick();
             }}>
-              {this.props.value}
+              {this.props.value || <div>&nbsp;</div>}
               </button> 
           </>
         );

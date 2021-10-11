@@ -25,18 +25,24 @@ class Game extends React.Component {
       this.setState(
         {squares: stateSquares, nextSymbol: nextSymbol});
         
-        this.win();
+        let Combination = this.win(stateSquares);
+        if (Combination) {
+          console.log(`Win ${Combination}`);
+          this.setState({ gameWon: true });
+        }
     }
   render(){
     return(
+      <div className="grid-container">
       <Board 
         squares={this.state.squares}
         handleSquareClick={this.handleSquareClick} 
         />
+        </div>
     );
   }
 
-    win() {
+  win(squares) {
         const winningSquaresCombinations = [
             [0, 1, 2],
             [3, 4, 5],
@@ -47,19 +53,17 @@ class Game extends React.Component {
             [0, 4, 8],
             [2, 4, 6],
         ];
-        winningSquaresCombinations.map(() => {});
-    
-    
-    } 
-
-
-      
+        for(let i = 0; i < winningSquaresCombinations.length; i++){
+          const[a, b, c] = winningSquaresCombinations[i];
+          if(
+            (squares[a]=== "X" || squares[a] === "O") &&
+             squares[a] === squares[b] && squares[a] === squares[c]
+            ){
+              console.log("Won");
+            return squares[a];
+          }
+        }
+      }  
 }
-
-
-    
-
-
-
 
   export default Game;
